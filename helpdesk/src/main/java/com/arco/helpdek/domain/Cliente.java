@@ -10,6 +10,7 @@ import com.arco.helpdek.domain.enums.Perfil;
 
 @Entity
 public class Cliente extends Pessoa {
+	
 	private static final long serialVersionUID = 1L;
 
 	@OneToMany(mappedBy = "cliente")

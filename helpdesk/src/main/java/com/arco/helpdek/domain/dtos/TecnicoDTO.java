@@ -14,12 +14,12 @@ public class TecnicoDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	protected Integer id;
-	protected String nome;
-	protected String cpf;
-	protected String email;
-	protected String senha;
-	protected Set<Integer> perfis = new HashSet<>();
+	private Integer id;
+	private String nome;
+	private String cpf;
+	private String email;
+	private String senha;
+	private Set<Integer> perfis = new HashSet<>();
 	
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	protected LocalDate dataCriacao = LocalDate.now();

@@ -1,5 +1,6 @@
 package com.arco.helpdek.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,5 +19,9 @@ public class TecnicoService {
 	public Tecnico findById(Integer id) {
 		Optional<Tecnico> obj = tecnicoRepository.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException("Object Not Found! id: " + id));
+	}
+
+	public List<Tecnico> findAll() {
+		return tecnicoRepository.findAll();
 	}
 }

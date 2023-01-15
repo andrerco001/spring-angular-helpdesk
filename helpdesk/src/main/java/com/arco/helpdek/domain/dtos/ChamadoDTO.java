@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 import com.arco.helpdek.domain.Chamado;
-import com.arco.helpdek.domain.enums.Status;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class ChamadoDTO implements Serializable {
@@ -17,7 +16,7 @@ public class ChamadoDTO implements Serializable {
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataFechamento;
 	private Integer prioridade;
-	private Status status;
+	private Integer status;
 	private String titulo;
 	private String observacoes;
 	private Integer tecnico;
@@ -35,7 +34,7 @@ public class ChamadoDTO implements Serializable {
 		this.dataAbertura = chamado.getDataAbertura();
 		this.dataFechamento = chamado.getDataFechamento();
 		this.prioridade = chamado.getPrioridade().getCodigo();
-		this.status = chamado.getStatus();
+		this.status = chamado.getStatus().getCodigo();
 		this.titulo = chamado.getTitulo();
 		this.observacoes = chamado.getObservacoes();
 		this.tecnico = chamado.getTecnico().getId();
@@ -76,11 +75,11 @@ public class ChamadoDTO implements Serializable {
 		this.prioridade = prioridade;
 	}
 
-	public Status getStatus() {
+	public Integer getStatus() {
 		return status;
 	}
 
-	public void setStatus(Status status) {
+	public void setStatus(Integer status) {
 		this.status = status;
 	}
 
